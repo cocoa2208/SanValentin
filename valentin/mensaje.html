@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Te amo, peluso! 💖</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: pink;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 2.5em;
+            color: red;
+            max-width: 90%;
+        }
+        p {
+            font-size: 1.2em;
+            color: white;
+            background-color: rgb(213, 36, 36);
+            padding: 15px;
+            border-radius: 10px;
+            display: inline-block;
+            max-width: 90%;
+        }
+        .heart {
+            font-size: 4em;
+            animation: heartbeat 1s infinite alternate;
+        }
+        @keyframes heartbeat {
+            from {
+                transform: scale(1);
+            }
+            to {
+                transform: scale(1.2);
+            }
+        }
+        .back {
+            margin-top: 20px;
+            font-size: 1em;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            background-color: white;
+            color: rgb(245, 69, 69);
+        }
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2em;
+            }
+            p {
+                font-size: 1em;
+                padding: 10px;
+            }
+            .heart {
+                font-size: 3em;
+            }
+            .back {
+                font-size: 0.9em;
+                padding: 8px 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>¡Sabía que dirías que sí! 💖</h1>
+    <p>Caytita para mi pelos: Buenas tardes amor mio como tas? quiero empezar esto con agradecerte por todos estos dias tan lindos y 
+        por soportarme poquito nomas (tu me haces renegar mas >:v), pero sobre todo quiero que sepas que siempre seras tu la mujer que 
+        me roba mi mirada y mi corazon, te amo tanto y poco a poco se esta haciendo realidad mi suenho, y te preguntaras "cual es tu suenho peluso?"
+        pues... Tener a la mujer mas bella, tierna, comprensiva y mi mundo de aventuras, te amo y te amare por muchas cosas mas 
+        y jamas me voy arrempentir de poder abrir mi corazon a mi toyita... love you with all my heard 🥰</p>
+    <div class="heart">❤️</div>
+    <button class="back" onclick="window.location.href='index.html'">Volver al inicio</button>
+</body>
+</html>

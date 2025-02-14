@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>San Valentín</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: pink;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 2.5em;
+            color: red;
+            max-width: 90%;
+        }
+        .buttons {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            position: relative;
+        }
+        button {
+            font-size: 1.2em;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .yes {
+            background-color: red;
+            color: white;
+        }
+        .no {
+            background-color: gray;
+            color: white;
+            position: relative; /* Ahora empieza con una posición normal */
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2em;
+            }
+            button {
+                font-size: 1em;
+                padding: 8px 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>¿Quieres ser mi San Valentín?</h1>
+    <!-- Aquí se agrega el GIF -->
+    <img src="imagen/burro.gif" alt="GIF de San Valentín" style="max-width: 100%; height: auto; margin: 20px 0;">
+    <div class="buttons">
+        <button class="yes" onclick="window.location.href='mensaje.html'">Claro que sí, peluso</button>
+        <button class="no" onclick="moverYagrandar()">No, nica</button>
+    </div>
+
+    <script>
+        function moverYagrandar() {
+            let botonNo = document.querySelector('.no');
+            let botonSi = document.querySelector('.yes');
+
+            // Se obtiene el tamaño del botón "No" para evitar que se salga de la pantalla
+            let maxWidth = window.innerWidth - botonNo.clientWidth - 20;
+            let maxHeight = window.innerHeight - botonNo.clientHeight - 20;
+
+            // Nueva posición aleatoria dentro de los límites de la pantalla
+            let x = Math.random() * maxWidth;
+            let y = Math.random() * maxHeight;
+
+            botonNo.style.position = "absolute"; // Solo se vuelve absoluto cuando se mueve
+            botonNo.style.left = x + "px";
+            botonNo.style.top = y + "px";
+
+            // Aumenta el tamaño del botón "Sí" sin desbordarlo
+            let currentSize = parseFloat(window.getComputedStyle(botonSi).fontSize);
+            let newSize = currentSize + 40 + "px";
+            botonSi.style.fontSize = newSize;
+            botonSi.style.padding = (parseFloat(botonSi.style.padding) + 40) + "px";
+        }
+    </script>
+</body>
+</html>
